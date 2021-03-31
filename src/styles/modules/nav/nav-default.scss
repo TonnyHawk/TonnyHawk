@@ -1,0 +1,115 @@
+.nav {
+   $menu-item-margin: 10px;
+
+   background: gainsboro;
+   font-family: 'Ubuntu', sans-serif;
+
+   // .nav__wrap
+
+   &__wrap {
+      display: flex;
+      position: relative;
+      padding: 20px 40px;
+   }
+
+   // .nav__logo
+
+   &__logo {
+      font-size: 30px;
+   }
+
+   // .nav__main
+
+   &__main {
+      display: flex;
+      flex-grow: 1;
+      padding-left: 20%;
+      @media(max-width: 920px){
+         position: absolute;
+         flex-direction: column;
+         width: 100%;
+         top: 100%;
+         background: blue;
+      }
+   }
+
+   // .nav__menu
+
+   &__menu {
+      display: flex;
+      align-items: center;
+      @media(max-width: 920px){
+         flex-direction: column;
+         align-items: center;
+      }
+   }
+
+   // .nav__menu-item
+
+   &__menu-item {
+      margin: 0 40px;
+   }
+
+   // .nav__link
+
+   &__link {
+      color: black;
+      font-size: 18px;
+   }
+
+   // .nav__expand
+
+   &__expand{
+      position: relative;
+   }
+
+   // .nav__expand-btn
+
+   &__expand-btn{
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      display: none;
+
+      &.show{
+         display: flex;
+      }
+
+      span{
+         @include square(4px);
+         background: gray;
+         border-radius: 100%;
+         margin: 2px;
+      }
+   }
+
+   // .nav__dropdown
+
+   &__dropdown {
+      position: relative;
+      &:hover{
+         .nav__dropdown-content{
+            opacity: 1;
+         }
+      }
+   }
+
+   // .nav__dropdown-content
+
+   &__dropdown-content {
+      position: absolute;
+      top: 100%;
+      opacity: 0;
+      width: max-content;
+      left: 0;
+   }
+
+   // .nav__btn
+
+   &__btn {
+      display: none;
+      @media(max-width: 920px){
+         display: block;
+      }
+   }
+}
